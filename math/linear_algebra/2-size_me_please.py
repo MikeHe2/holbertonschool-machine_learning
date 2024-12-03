@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+
 """Linear algebra"""
+
 
 def matrix_shape(matrix):
 
