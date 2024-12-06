@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
+"""Linear algebra"""
+
 import numpy as np
 
-"""Linear algebra"""
 
 
 def np_cat(mat1, mat2, axis=0):
