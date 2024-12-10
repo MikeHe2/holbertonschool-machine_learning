@@ -22,6 +22,7 @@ def two():
     plt.plot(x, y2, c='g', label = 'Ra-226', linestyle="-")
     plt.autoscale(tight=True)
     plt.xlim(0, 20000)
+    plt.ylim(0, 1)
     plt.title('Exponential Decay of Radioactive Elements')
     plt.xlabel('Time (years)')
     plt.ylabel('Fraction Remaining')
