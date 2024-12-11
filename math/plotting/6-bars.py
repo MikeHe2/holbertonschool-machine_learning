@@ -15,7 +15,7 @@ def bars():
     plt.figure(figsize=(6.4, 4.8))
 
     people = ['Farrah', 'Fred', 'Felicia']
-    fruits = ['Apples', 'Bananas', 'Oranges', 'Peaches']
+    fruits = ['apples', 'bananas', 'oranges', 'peaches']
     colors = ['red', 'yellow', '#ff8000', '#ffe5b4']
 
     x = np.arange(len(people))
