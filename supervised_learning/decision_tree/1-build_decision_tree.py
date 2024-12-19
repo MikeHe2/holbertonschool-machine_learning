@@ -39,7 +39,7 @@ class Node:
         """Calculate the nodes below"""
 
         if self.is_leaf:
-            return 1
+            return self.is_leaf
         else:
             left_count = self.left_child.count_nodes_below(only_leaves)
             right_count = self.right_child.count_nodes_below(only_leaves)
