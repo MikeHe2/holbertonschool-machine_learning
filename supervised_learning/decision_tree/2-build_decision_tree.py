@@ -65,11 +65,11 @@ class Node:
         # Generate strings for the left and right children, if they exist
         left_str = ""
         if self.left_child:
-            left_str = self.left_child_add_prefix(self.left_child.__str__())
+            left_str = self.left_child_add_prefix(self.left_child.__str__().strip())
 
         right_str = ""
         if self.right_child:
-            right_str = self.right_child_add_prefix(self.right_child.__str__())
+            right_str = self.right_child_add_prefix(self.right_child.__str__().strip())
 
         # Combine the current node's string with its children
         return node_str + left_str + right_str
