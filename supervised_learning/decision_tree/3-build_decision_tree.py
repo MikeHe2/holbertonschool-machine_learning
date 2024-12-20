@@ -64,9 +64,11 @@ class Node:
 
         # Generate the string for the current node (root or non-root)
         if self.is_root:
-            node_str = f"root [feature={self.feature}, threshold={self.threshold}]\n"
+            node_str = f"root [feature={self.feature},\
+                        threshold={self.threshold}]\n"
         else:
-            node_str = f"-> node [feature={self.feature}, threshold={self.threshold}]\n"
+            node_str = f"-> node [feature={self.feature},\
+                        threshold={self.threshold}]\n"
 
         # If the node is a leaf, return its string representation
         if self.is_leaf:
@@ -75,33 +77,34 @@ class Node:
         # Generate strings for the left and right children, if they exist
         left_str = ""
         if self.left_child:
-            left_str = self.left_child_add_prefix(self.left_child.__str__().strip())
+            left_str = self.left_child_add_prefix
+            (self.left_child.__str__().strip())
 
         right_str = ""
         if self.right_child:
-            right_str = self.right_child_add_prefix(self.right_child.__str__().strip())
+            right_str = self.right_child_add_prefix
+            (self.right_child.__str__().strip())
 
         # Combine the current node's string with its children
         return node_str + left_str + right_str
 
-    def left_child_add_prefix(self,text):
+    def left_child_add_prefix(self, text):
         """Add prefix to left child"""
 
-        lines=text.split("\n")
-        new_text="    +--"+lines[0]+"\n"
-        for x in lines[1:] :
-            new_text+=("    |  "+x)+"\n"
+        lines = text.split("\n")
+        new_text = "    +--" + lines[0] + "\n"
+        for x in lines[1:]:
+            new_text += ("    |  " + x) + "\n"
         return (new_text)
 
-    def right_child_add_prefix(self,text):
+    def right_child_add_prefix(self, text):
         """Add prefix to right child"""
 
-        lines=text.split("\n")
-        new_text="    +--"+lines[0]+"\n"
-        for x in lines[1:] :
-            new_text+=("      "+x)+"\n"
+        lines = text.split("\n")
+        new_text = "    +--" + lines[0] + "\n"
+        for x in lines[1:]:
+            new_text += ("      "+x) + "\n"
         return (new_text)
-
 
 
 class Leaf(Node):
@@ -134,7 +137,6 @@ class Leaf(Node):
         """Get the leaves that are below"""
 
         return [self]
-
 
 
 class Decision_Tree():
@@ -171,7 +173,7 @@ class Decision_Tree():
 
         return self.root.count_nodes_below(only_leaves=only_leaves)
 
-    def get_leaves(self) :
+    def get_leaves(self):
         """Get the leaves of a decision tree"""
 
         return self.root.get_leaves_below()
