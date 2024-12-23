@@ -142,6 +142,7 @@ class Node:
 
         self.indicator = lambda x : np.all(np.array([is_large_enough(x),is_small_enough(x)]),axis=0)
 
+
 class Leaf(Node):
     """Leaf node class for a decision tree."""
 
