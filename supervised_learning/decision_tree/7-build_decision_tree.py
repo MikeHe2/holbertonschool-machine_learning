@@ -146,6 +146,7 @@ class Node:
             [is_large_enough(x), is_small_enough(x)]), axis=0)
 
     def pred(self, x):
+        """Pred"""
         if x[self.feature] > self.threshold:
             return self.left_child.pred(x)
         else:
@@ -188,6 +189,7 @@ class Leaf(Node):
         pass
 
     def pred(self, x):
+        """Pred"""
         return self.value
 
 
@@ -264,7 +266,7 @@ class Decision_Tree():
         return feature, threshold
 
     def fit(self, explanatory, target, verbose=0):
-        """Function """
+        """Function"""
 
         if self.split_criterion == "random":
             self.split_criterion = self.random_split_criterion
