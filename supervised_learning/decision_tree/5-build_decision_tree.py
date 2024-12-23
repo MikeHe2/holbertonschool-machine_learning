@@ -138,7 +138,7 @@ class Node:
         def is_small_enough(x):
             """Check if the values are smaller"""
 
-            return  np.all([x[:, key] <= self.lower[key] for key in self.lower.keys()], axis=0)
+            return  np.all([x[:, key] <= self.upper[key] for key in self.upper.keys()], axis=0)
 
         self.indicator = lambda x : np.all(np.array([is_large_enough(x),is_small_enough(x)]),axis=0)
 
