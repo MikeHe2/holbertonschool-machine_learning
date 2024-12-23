@@ -235,6 +235,7 @@ class Decision_Tree():
         self.root.update_bounds_below()
 
     def update_predict(self):
+        """Update the predict"""
         self.update_bounds()
         leaves = self.get_leaves()
         for leaf in leaves:
@@ -242,6 +243,7 @@ class Decision_Tree():
         self.predict = lambda A: np.array([self.pred(x) for x in A])
 
     def pred(self, x):
+        """Pred"""
         return self.root.pred(x)
 
     def np_extrema(self, arr):
