@@ -3,7 +3,7 @@
 import numpy as np
 
 
-class Node:
+class Node():
     """Node class represents a single node in a decision tree."""
 
     def __init__(self, feature=None, threshold=None, left_child=None,
@@ -17,7 +17,7 @@ class Node:
         self.is_leaf = False
         self.is_root = is_root
         self.sub_population = None
-        self.depth = depth
+        self.depth = (depth)
 
     def max_depth_below(self):
         """Calculate the max depth"""
